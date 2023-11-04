@@ -6,14 +6,7 @@ import { Input } from '../../components/Input';
 import { Section } from "../../components/Section";
 import { Note } from '../../components/Note';
 
-import { useNavigate } from 'react-router-dom';
-
 export function Home() {
-  let navigate = useNavigate();
-  const routeChange = () => {
-    let path = `NewNote`;
-    navigate(path);
-  }
 
   return (
     <Container>
@@ -59,7 +52,7 @@ export function Home() {
         </Section>
       </Content>
 
-      <NewNote onClick={routeChange}>
+      <NewNote to="NewNote">
         <FiPlus />
         Criar nota
       </NewNote>

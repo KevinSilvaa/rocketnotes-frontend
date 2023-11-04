@@ -7,7 +7,7 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.GRAY_300};
     border-radius: 0.75rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
     > input {
         height: 3.5rem;
