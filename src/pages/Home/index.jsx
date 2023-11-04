@@ -6,7 +6,14 @@ import { Input } from '../../components/Input';
 import { Section } from "../../components/Section";
 import { Note } from '../../components/Note';
 
+import { useNavigate } from 'react-router-dom';
+
 export function Home() {
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `NewNote`;
+    navigate(path);
+  }
 
   return (
     <Container>
@@ -39,7 +46,7 @@ export function Home() {
               { id: '1', name: 'React' },
               { id: '2', name: 'Styled Components' }
             ]
-            }} 
+            }}
           />
           <Note data={{
             title: "Node.js (Aplicação Back-end)",
@@ -52,7 +59,7 @@ export function Home() {
         </Section>
       </Content>
 
-      <NewNote>
+      <NewNote onClick={routeChange}>
         <FiPlus />
         Criar nota
       </NewNote>
