@@ -10,12 +10,15 @@ import { Input } from '../../components/Input';
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
 import { ButtonText } from "../../components/ButtonText";
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
   const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
   const [tagsSelected, setTagsSelected] = useState([]);
   const [notes, setNotes] = useState([]);
+  
+  const navigate = useNavigate();
 
   function handleTagSelect(tagName) {
     if (tagName === "todos") {
@@ -33,6 +36,9 @@ export function Home() {
     
   }
 
+  function handleDetails(id) {
+    navigate(`/details/${id}`)
+  }
 
   useEffect(() => {
     async function fetchTags() {
@@ -92,6 +98,7 @@ export function Home() {
               <Note 
                 key={String(note.id)}
                 data={note}
+                onClick={() => handleDetails(note.id)}
               />
             ))
           }
