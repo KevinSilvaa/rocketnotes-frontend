@@ -53,11 +53,11 @@ export function NewNote() {
     }  
     
     if (newLink) {
-      return alert("Você deixou um link sem adicionar no campo, clique para adicioná-lo ou deixe o campo vazio");
+      return alert("Você deixou um link no campo para adicionar, clique para adicioná-lo ou deixe o campo vazio");
     }
     
     if (newTag) {
-      return alert("Você deixou uma tag sem adicionar no campo, clique para adicioná-la ou deixe o campo vazio");
+      return alert("Você deixou uma tag no campo para adicionar, clique para adicioná-la ou deixe o campo vazio");
     }
 
     await api.post("/notes", {
